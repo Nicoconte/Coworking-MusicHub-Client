@@ -7,14 +7,26 @@ import { Observable } from 'rxjs';
 })
 export class RoomService {
 
+  private headerOptions = new HttpHeaders({
+    "Authorization": `Token ${localStorage.getItem('token')}`
+  })
+
   constructor(private http: HttpClient) { }
 
   public create(roomBody: {}): Observable<any> {
     return this.http.post<any>("/api/room/new", roomBody, {
-      headers: new HttpHeaders({
-        "Authorization": `Token ${localStorage.getItem('token')}`
-      })
+      headers: this.headerOptions
     })
+  }
+
+  public list(): Observable<any> {
+    return this.http.get<any>("/api/room/me/all", {
+      headers: this.headerOptions
+    })
+  }
+
+  public join(roomId: string, credentials: {} = {}): Observable<any> {
+    return this.http.post<any>(`/api/room/${roomId}/join`, credentials, { headers: this.headerOptions }) 
   }
 
 }

@@ -12,6 +12,8 @@ import { NotFoundComponent } from './core/pages/not-found/not-found.component';
 import { LobbyComponent } from './room/pages/lobby/lobby.component';
 import { CreateRoomFormComponent } from './room/components/create-room-form/create-room-form.component';
 import { RoomModalComponent } from './room/components/room-modal/room-modal.component';
+import { RoomCardComponent } from './room/components/room-card/room-card.component';
+import { RoomListComponent } from './room/components/room-list/room-list.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { RoomModalComponent } from './room/components/room-modal/room-modal.comp
     NotFoundComponent,
     LobbyComponent,
     CreateRoomFormComponent,
-    RoomModalComponent
+    RoomModalComponent,
+    RoomCardComponent,
+    RoomListComponent
   ],
   imports: [
     BrowserModule,

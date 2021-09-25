@@ -1,1 +1,22 @@
-<p>room-modal works!</p>
+<button type="button" class="btn btn-success" data-toggle="modal" data-target="#room-modal">
+    Create
+  </button>
+
+<div class="modal fade" tabindex="-1" id="room-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Create an amazing room</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">
+                        <i class='fa fa-times'></i>
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <app-create-room-form></app-create-room-form>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,5 @@
+<div class='w-100 h-100'>
+    <div *ngFor="let room of roomList">
+        <app-room-card [name]="room?.name" [isPublic]="room?.isPublic" [id]="room?.id" [inviteCode]='room?.inviteCode'></app-room-card>
+    </div>
+</div>

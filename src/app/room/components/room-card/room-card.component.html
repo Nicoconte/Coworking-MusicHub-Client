@@ -1,0 +1,26 @@
+<div class="room-card-container w-75 mt-4" style='margin-left:70px'>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">{{name}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted" *ngIf="isPublic">
+                <i class='fa fa-unlock'></i>
+                <span class='ml-2'>
+                    Room Code: {{inviteCode}} 
+                </span>
+            </h6>
+
+            <h6 class="card-subtitle mt-3 text-muted" *ngIf="!isPublic">
+                <i class='fa fa-lock'></i>
+                <span class='ml-2'>
+                    Room Code: {{inviteCode}} 
+                </span>                
+            </h6>
+            <span>
+                <button (click)="joinRoom()" class='btn btn-sm mt-2 btn-info'> 
+                    Join    
+                    <i class='ml-1 fa fa-users'></i>
+                </button>
+            </span>
+        </div>
+    </div>
+</div>

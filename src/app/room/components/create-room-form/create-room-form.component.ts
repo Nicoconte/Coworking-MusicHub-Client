@@ -70,6 +70,7 @@ export class CreateRoomFormComponent implements OnInit {
     })
 
     this.roomForm.reset();
+    this.roomForm.get('password')?.enable();
   }
 
 }
