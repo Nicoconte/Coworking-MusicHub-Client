@@ -1,0 +1,23 @@
+<div class="room-form-container">
+
+    <form [formGroup]='roomForm'>
+        <input class='mt-2 form-control' type="text" formControlName='name' placeholder="Room name">
+        <input class='mt-3 form-control' type="number" formControlName='maxNumberOfParticipants' placeholder="Max number of members">
+        
+        <div class="form-check mt-3 ml-1">
+            <input (click)="togglePasswordField()" class="form-check-input mt-2" type="checkbox" formControlName="isPublic" value="false" id="flexCheckChecked" checked>
+            <label class="form-check-label" for="flexCheckChecked" style="font-weight:400; font-size:17px;">
+                Is Public
+            </label>
+        </div>
+
+        <input class='mt-3 form-control' type="text" formControlName='password' placeholder="Room password">
+
+        <div class='mt-4'></div>
+
+        <button (click)='createRoom()' class='btn btn-info w-100'>
+            Create room!
+        </button>
+
+    </form>
+</div>

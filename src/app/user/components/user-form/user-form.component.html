@@ -1,0 +1,27 @@
+<div class="user-form-container">
+    <form [formGroup]="userForm">
+
+        <h1> {{formH1Title}} </h1>
+
+        <h4> {{formH4SubTitle}} </h4>
+
+        <input type="text" class="form-control mt-5" placeholder="Username" formControlName="username">
+        
+        <input type="password" class="form-control mt-4" placeholder="Password" formControlName="password">
+
+        <div class='mt-4'></div>
+
+        <div *ngIf="formType=='register'">
+            <button (click)="signUp()" class='signup btn btn-info'>
+                Sign up
+            </button>
+        </div>
+
+        <div *ngIf="formType=='login'">
+            <button (click)="signIn()" class='signup btn btn-info'>
+                Sign in
+            </button>
+        </div>
+
+    </form>
+</div>
