@@ -14,6 +14,10 @@ import { CreateRoomFormComponent } from './room/components/create-room-form/crea
 import { RoomModalComponent } from './room/components/room-modal/room-modal.component';
 import { RoomCardComponent } from './room/components/room-card/room-card.component';
 import { RoomListComponent } from './room/components/room-list/room-list.component';
+import { RoomComponent } from './room/pages/room/room.component';
+import { SendSongModalComponent } from './song/components/send-song-modal/send-song-modal.component';
+import { SongPreviewCardComponent } from './song/components/song-preview-card/song-preview-card.component';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +30,10 @@ import { RoomListComponent } from './room/components/room-list/room-list.compone
     CreateRoomFormComponent,
     RoomModalComponent,
     RoomCardComponent,
-    RoomListComponent
+    RoomListComponent,
+    RoomComponent,
+    SendSongModalComponent,
+    SongPreviewCardComponent
   ],
   imports: [
     BrowserModule,

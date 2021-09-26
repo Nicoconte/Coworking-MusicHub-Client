@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { RoomService } from '../../services/room.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class RoomCardComponent implements OnInit {
   @Input() isPublic: boolean = false;
   @Input() inviteCode: string = "";
 
-  constructor(private room: RoomService) { }
+  constructor(private room: RoomService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -64,6 +65,23 @@ export class RoomCardComponent implements OnInit {
       }
     })
 
+  }
+
+  public access() {
+    this.room.getAccess(this.id)
+      .subscribe({
+        next: res => {
+          if (res.status) {
+            this.router.navigate([`/room/${this.id}`])
+            console.log(res);
+          } else {
+            alert(res.reason)
+          }
+        },
+        error: err => {
+          throw err;
+        }
+      })
   }
 
 }

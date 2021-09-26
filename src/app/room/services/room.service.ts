@@ -29,4 +29,8 @@ export class RoomService {
     return this.http.post<any>(`/api/room/${roomId}/join`, credentials, { headers: this.headerOptions }) 
   }
 
+  public getAccess(roomId: string): Observable<any> {
+    return this.http.post<any>(`/api/room/${roomId}/access`, {}, { headers: this.headerOptions })
+  }
+
 }

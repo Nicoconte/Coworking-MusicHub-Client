@@ -7,11 +7,13 @@ import { UserSignupComponent } from './user/pages/user-signup/user-signup.compon
 
 import { SessionGuardService as SessionGuard } from './core/guards/session-guard.service'; 
 import { AuthGuardService as AuthGuard } from './core/guards/auth-guard.service';
+import { RoomComponent } from './room/pages/room/room.component';
 
 const routes: Routes = [
   { path:"signin", component: UserSigninComponent, canActivate: [SessionGuard] },
   { path:"signup", component: UserSignupComponent, canActivate: [SessionGuard] },
   { path:"lobby", component: LobbyComponent, canActivate: [AuthGuard] },
+  { path:"room/:id", component: RoomComponent },
   { path:"**", component: NotFoundComponent },
 ];
 
