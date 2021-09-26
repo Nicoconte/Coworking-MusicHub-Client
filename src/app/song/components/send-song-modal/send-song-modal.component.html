@@ -1,1 +1,31 @@
-<p>send-song-modal works!</p>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#send-song-modal">
+  Upload song
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="send-song-modal" tabindex="-1" aria-labelledby="send-song-modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class='text-muted'>Upload and share a song 🎶</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">
+              <i class='fa fa-times'></i>
+          </span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]='songForm'>
+            <input class='form-control' type="text" formControlName='url' placeholder="Youtube URL">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button (click)='sendSongToServer()' type="button" class="btn btn-primary">
+            Send
+            <i class='fa fa-upload ml-2'></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

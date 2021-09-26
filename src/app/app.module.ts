@@ -17,6 +17,9 @@ import { RoomListComponent } from './room/components/room-list/room-list.compone
 import { RoomComponent } from './room/pages/room/room.component';
 import { SendSongModalComponent } from './song/components/send-song-modal/send-song-modal.component';
 import { SongPreviewCardComponent } from './song/components/song-preview-card/song-preview-card.component';
+import { SongQueuePreviewComponent } from './song/components/song-queue-preview/song-queue-preview.component';
+import { IframeYoutubeComponent } from './song/components/iframe-youtube/iframe-youtube.component';
+import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
 
 
 @NgModule({
@@ -33,14 +36,17 @@ import { SongPreviewCardComponent } from './song/components/song-preview-card/so
     RoomListComponent,
     RoomComponent,
     SendSongModalComponent,
-    SongPreviewCardComponent
+    SongPreviewCardComponent,
+    SongQueuePreviewComponent,
+    IframeYoutubeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxYoutubePlayerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,10 @@
+<div class="iframe-youtube-container w-50 h-50">
+
+    <youtube-player
+        [videoId]='videoID'
+        (ready)="savePlayer($event)"
+        (change)="onStateChange($event)"
+    >
+    </youtube-player>
+
+</div>

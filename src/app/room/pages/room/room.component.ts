@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { SocketService } from 'src/app/core/services/socket.service';
+import { SongQueueService } from 'src/app/song/services/song-queue.service';
 
 @Component({
   selector: 'app-room',
@@ -12,11 +12,16 @@ export class RoomComponent implements OnInit {
 
   public id!: string;
 
-  constructor(private router: ActivatedRoute, private socket: SocketService) { }
+  constructor(private router: ActivatedRoute, private song: SongQueueService) { }
 
   ngOnInit(): void {
     this.router.params.subscribe(params => {
-      // Request songs
+      this.id = params.id;
+    });
+
+    this.song.requestMyQueue(this.id)
+    .then(() => {
+      this.song.retrieveAndSaveQueue(this.id);
     })
   }
 }

@@ -20,7 +20,7 @@ export class RoomService {
   }
 
   public list(): Observable<any> {
-    return this.http.get<any>("/api/room/me/all", {
+    return this.http.get<any>("/api/room/public/all", {
       headers: this.headerOptions
     })
   }

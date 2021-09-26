@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SocketService } from 'src/app/core/services/socket.service';
+import { SongQueueService } from 'src/app/song/services/song-queue.service';
 import { RoomService } from '../../services/room.service';
 
 @Component({
@@ -14,7 +16,7 @@ export class RoomCardComponent implements OnInit {
   @Input() isPublic: boolean = false;
   @Input() inviteCode: string = "";
 
-  constructor(private room: RoomService, private router: Router) { }
+  constructor(private room: RoomService, private router: Router, private socket: SocketService) { }
 
   ngOnInit(): void {
   }
@@ -72,8 +74,16 @@ export class RoomCardComponent implements OnInit {
       .subscribe({
         next: res => {
           if (res.status) {
-            this.router.navigate([`/room/${this.id}`])
-            console.log(res);
+            if (res.canEmit) {
+              
+              this.socket.emit('access-room', this.id);
+
+              setTimeout(() => {
+                this.router.navigate([`/room/${this.id}`])
+              }, 100)
+
+            }          
+
           } else {
             alert(res.reason)
           }
