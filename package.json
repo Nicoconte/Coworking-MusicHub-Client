@@ -1,5 +1,5 @@
 {
-  "name": "coworking-music-hub-client",
+  "name": "music-hub-client",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",

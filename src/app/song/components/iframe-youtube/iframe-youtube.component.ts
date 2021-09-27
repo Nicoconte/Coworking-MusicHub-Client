@@ -18,6 +18,7 @@ export class IframeYoutubeComponent implements OnInit {
       this.storage.getItem('currentVideo').subscribe(video => {
         this.videoID = video.toString();
         this.player.loadVideoById(this.videoID);
+
       })
     }, 1500)
   }

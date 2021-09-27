@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Coworking-MusicHub-Client",
+            "outputPath": "dist/MusicHub-Client",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -71,11 +71,11 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Coworking-MusicHub-Client:build:production",
+              "browserTarget": "MusicHub-Client:build:production",
               "proxyConfig": "./proxy-config-prod.json"
             },
             "development": {
-              "browserTarget": "Coworking-MusicHub-Client:build:development",
+              "browserTarget": "MusicHub-Client:build:development",
               "proxyConfig": "./proxy-config-dev.json"
             }
           },
@@ -84,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Coworking-MusicHub-Client:build"
+            "browserTarget": "MusicHub-Client:build"
           }
         },
         "test": {
@@ -107,5 +107,5 @@
       }
     }
   },
-  "defaultProject": "Coworking-MusicHub-Client"
+  "defaultProject": "MusicHub-Client"
 }

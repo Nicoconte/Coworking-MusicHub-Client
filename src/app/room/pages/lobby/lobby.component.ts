@@ -10,6 +10,12 @@ export class LobbyComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.resetRoomDataFromLocalstorage();
+  }
+
+  private resetRoomDataFromLocalstorage(): void {
+    localStorage.removeItem('currentVideo');
+    localStorage.removeItem('roomInfo');
   }
 
 }

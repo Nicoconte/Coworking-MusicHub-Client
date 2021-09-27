@@ -24,4 +24,8 @@ export class RoomComponent implements OnInit {
       this.song.retrieveAndSaveQueue(this.id);
     })
   }
+
+  public test() {
+    window.open("http://localhost:4200/room/" + this.id, "_blank", "resizable=no, toolbar=no, scrollbars=no, menubar=no, status=no, directories=no, location=no, width=600, height=350, left=" + 300 + " top=100 " )
+  }
 }
